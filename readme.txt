@@ -1,2 +1,2 @@
 just do it
-i love studying
+Creating a new branch is quick & simple.
