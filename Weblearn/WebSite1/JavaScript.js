@@ -1,11 +1,9 @@
-﻿var app = new Vue({
-    el: '#app',
-    data: {
-        message: 'Hello Vue!'
-    }
+﻿//定义名为todo-item的新组建
+Vue.component('todo-item', {
+    template: '<li>This is a todo</li>'
 })
-var app2 = new Vue({
-    el: '#app-2',
-    data: {
-        message:'页面加载于'+new Date().toLocaleString()}
+
+var app = new Vue({
+    el: '#app'
 })
+

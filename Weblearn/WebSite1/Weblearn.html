@@ -1,21 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <link href="stylesheet" rel="index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-</head>
-<body>
+    <head>
+        <link href="stylesheet" rel="index.css" />
 
-    <div id="app">
-        {{ message }}
-
-    </div>
-    <div id="app-2">
-        <span v-bind:title="message">
-            鼠标悬停几秒钟查看此处动态绑定的提示信息！
-        </span>
-    </div>
-
-    <script src="JavaScript.js"></script>
-</body>
+        <!--开发环境版本，包含了有帮助的命令行警告-->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        <script src="JavaScript.js"></script>
+    </head>
+    <body>
+        <!--创建一个todo-item组件的实例-->=
+        <div id="app"><ol><todo-item>wo</todo-item></ol></div>
+    </body>
 </html>
