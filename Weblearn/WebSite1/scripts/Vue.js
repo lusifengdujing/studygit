@@ -61,3 +61,16 @@ var app7 = new Vue({
         ]
     }
 })
+
+var app8 = new Vue({
+    el: '#example',
+    data: {
+        message:'Hello'
+    },
+    computed: {
+        //计算属性的getter
+        reversedMessage: function () {
+            return this.message.split('').reverse().join('')
+        }
+    }
+})
