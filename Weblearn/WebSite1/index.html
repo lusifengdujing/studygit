@@ -2,67 +2,19 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>HelloWorld</title>
-        <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+        <title>购物车实例</title>
         <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
-       
+        <link href="style/index.css" rel="stylesheet" type="text/css" />       
     </head>
 
     <body>
-        <!--<div id="app">
-            {{ message }}
-        </div>
-
-        <div id="app-2">
-            <span v-bind:title="message">
-                鼠标悬停几秒钟查看此处动态绑定的提示信息！
-            </span>
-        </div>
-
-        <div class="app-3">
-            <p v-if="seen">现在你看到我了</p>
-        </div>
-
-        <div id="app-4">
-            <ol>
-                <li v-for="todo in todos">
-                    {{ todo.text }}
-                </li>
-            </ol>
-        </div>
-
-        <div id="app-5">
-            <p>{{ message }}</p>
-            <button v-on:click="reverseMessage">逆转消息</button>
-        </div>
-
-        <div id="app-6">
-            <p>{{ message }}</p>
-            <input v-model="message">
-        </div>-->
-
-
-        <div id="app-7">
-            <!-- 创建一个 todo-item 组件的实例 -->
-            <ol>
-                <!--现在我们为每个 todo-item 提供 todo 对象todo 对象是变量，即其内容可以是动态的。我们也需要为每个组件提供一个“key”。-->
-                <todo-item v-for="item in groceryList"
-                           v-bind:todo="item"
-                           v-bind:key="item.id">
-                </todo-item>
-            </ol>
-
-            
+        <div id="app" cloak>
 
         </div>
 
-        <div id="example">
-            <p>Original message:"{{message}}"</p>
-            <p>Computed reversed message:"{{reversedMessage}}"</p>
-        </div>
 
-        
 
+        <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
         <script src="scripts/Vue.js"></script>
     </body>
 </html>
