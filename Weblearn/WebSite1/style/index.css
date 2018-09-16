@@ -1,26 +1,21 @@
 ﻿[v-cloak] {
-    /*选择带有 target 属性所有元素。*/
-    /*此元素不会被显示*/
-    display:none;
+    display: none;
 }
 
-/*类别选择器*/
-/*表格样式*/
 table {
     border: 1px solid #e9e9e9;
-    /*属性设置表格的边框是否被合并为一个单一的边框*/ 
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
 }
-/*行、列样式*/
-tr,td{
+
+th, td {
     padding: 8px 16px;
     border: 1px solid #e9e9e9;
     text-align: left;
 }
-/*表头样式*/
-th{
+
+th {
     background: #f7f7f7;
     color: #5c6b77;
     font-weight: 600;

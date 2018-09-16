@@ -1,20 +1,68 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>购物车实例</title>
-        <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
-        <link href="style/index.css" rel="stylesheet" type="text/css" />       
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <title>测试</title>
+    <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <!--引用jQuery函数库-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
 
-    <body>
-        <div id="app" cloak>
+     <!--<script language="javascript" type="text/javascript">
+        var t;
+        function setValue() {
+            t = document.getElementById("tt").value;
+            console.log(typeof t);
+        }
+    </script>-->
 
+    <form id="form1">
+        <div>
+            <div>输入旋转角度</div>
+            <input type="text" id="tt" value="0" />
+            <input type="button" id="btnSub" value="提交" onclick="setValue()" />
         </div>
+    </form>
+
+
+   
+
+    <!--<div style="padding:30px"></div>
+    <div>输入旋转角度</div>
+    <div><input type='text' id='iptTxt'></div>-->
+    <!--高400 宽400的绘制区域-->
+    <div class=""></div>
+    <svg width="400" height=400>
+        <line x1="0" y1="200" x2="400" y2="200" style="stroke:black; stroke-width:5;" />
+        <line id="rotate" x1="0" y1="200" x2="400" y2="200" style="stroke:black; stroke-width:5;" />
+
+    </svg>
+
+    <!--script-->
+    <script type="text/javascript">
+        var rotate = document.getElementById("rotate");  
+        var newAngle=0;
+
+        //响应提交按钮
+        function setValue() {
+            newAngle = document.getElementById("tt").value;
+            //console.log(realAngle);
+           
+            console.log(newAngle);
+            rotate.setAttribute("transform", "rotate(" + -newAngle + " 200,200)");
+        }
+        //console.log(realAngle);
+       
+
+        
+
+    </script>
 
 
 
-        <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
-        <script src="scripts/Vue.js"></script>
-    </body>
+
+    <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+    <script src="scripts/Vue.js" type="text/javascript" charset="utf-8"></script>
+</body>
 </html>
