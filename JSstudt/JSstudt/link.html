@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <div>输入旋转角度</div>
+        <input type="text" id="angle" value="0" />
+        <input type="button" id="btnSub" value="提交" onclick="setValue()" />
+    </div>
+
+    <!--高400 宽400的绘制区域-->
+    <svg width="400" height=400>
+        <line x1="0" y1="200" x2="400" y2="200" style="stroke:black; stroke-width:5;" />
+        <line id="rotate" x1="0" y1="200" x2="400" y2="200" style="stroke:black; stroke-width:5;" />
+
+    </svg>
+
+    <script type="text/javascript">
+        var rotate = document.getElementById("rotate");
+        var newAngle = 0;
+
+        //响应提交按钮
+        function setValue() {
+            newAngle = document.getElementById("angle").value;            
+            console.log(newAngle);
+            rotate.setAttribute("transform", "rotate(" + -newAngle + " 200,200)");
+        }           
+    </script>
+</body>
+</html>
