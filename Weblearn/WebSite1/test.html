@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        //在字典中不存在返回null
+        var getSpreaderType=function (key) {
+            //var key = this.getValue(key);
+            var spreadertype = { 0: "STZ", 1: "STB", 2: "SRZ", 3: "SPR", 4: "SPZ", 5: "SPB" };
+            if (!(key in spreadertype)) {
+                console.log("不存在符合该字典的数据");
+                return null;}
+            return spreadertype[key];
+        }
+
+        var a = 11;
+        var b = parseInt(a, 2);
+        console.log(b);
+
+        console.log(getSpreaderType(15));
+    </script>
+</body>
+</html>

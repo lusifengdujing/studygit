@@ -8,7 +8,7 @@
     <div>
         <div>输入旋转角度</div>
         <input type="text" id="angle" value="0" />
-        <input type="button" id="btnSub" value="提交" onclick="setValue()" />
+        <input type="button" id="btnSub" value="提交" />
     </div>
 
     <!--高400 宽400的绘制区域-->
@@ -20,14 +20,15 @@
 
     <script type="text/javascript">
         var rotate = document.getElementById("rotate");
+        var btn = document.getElementById("btnSub");
         var newAngle = 0;
 
         //响应提交按钮
-        function setValue() {
-            newAngle = document.getElementById("angle").value;            
-            console.log(newAngle);
+        btn.onclick = function () {
+            newAngle = document.getElementById("angle").value;
+            //console.log(newAngle);
             rotate.setAttribute("transform", "rotate(" + -newAngle + " 200,200)");
-        }           
+        };           
     </script>
 </body>
 </html>

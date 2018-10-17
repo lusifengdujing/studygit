@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>数字输入框组件</title>    
+</head>
+<body>
+    <div id="app">
+        <input-number v-model="value" :max="10" :min="0"></input-number>
+
+    </div>
+    <!--js引用顺序会导致页面显示不了组件，vue实例应该放在组件js后面-->
+    <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+    <script src="scripts/input-number.js"></script>
+    <script src="scripts/index.js"></script>
+    
+
+</body>
+</html>
