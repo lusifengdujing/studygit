@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        //v是获取的数据
+             //hex:传入数据转换为十六进制后的结果,"0000"补全零
+             //bin:传入数据转换为二进制后的结果
+            //digit:十六进制取前两位后转换为十进制
+        var consoleRandom = function (v) {
+            var hex = "0000" + Math.abs(v).toString(16);
+            var result = parseInt(parseInt(hex.slice(-2), 16) / 255 * 100);
+            console.log(((v < 0)?(result * (-1)):(result)) + '%');
+            return (v<0)?(result * (-1)):(result);
+            
+            
+            
+        };
+
+    </script>
+</body>
+</html>

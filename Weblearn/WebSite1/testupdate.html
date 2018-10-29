@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="/scripts/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="u-box mar-t-lg text-center">
+            <div style="right:20px">Type:</div>
+            <test :v="1"><test>
+        </div>
+    </div>
+    <script>
+        //验证textbox是否有效
+        Vue.directive('uz-valid', function (el, binding) {
+            var ctl = $(el);
+            var text = ctl.text();
+            ctl.toggleClass('bg-black', !text || text.indexOf('undefined') >= 0 || text.indexOf('NaN') >= 0);
+        });
+
+        Vue.component('test', {
+            template: '<div v-uz-valid data-toggle="tooltip" data-placement="top" class="textbox" title="MW13002,TYPE">{{type}}</div>',
+            props: {
+                v: {}
+
+            },
+            computed: {
+                type: function () {
+                    var key = this.v;
+                    
+                    spreadertype=$.get('types.json', function (data) {
+
+                        $.each(data, function (m) {
+                            console.log(m); //获取键值
+                            
+                        });
+
+                        return $.parseJSON(data);// data即为json文件内容里的json数据
+                    });
+                    
+                    console.log('外部的' + JSON.stringify(spreadertype));
+                    //var spreadertype = { "1": "STZ", "2": "STB", "3": "SRZ", "4": "SPR", "5": "SPZ", "6": "SPB" };
+                    if (key in spreadertype) {
+                        return spreadertype[key];
+                    } else { return null;}
+                }
+            }
+            
+        })
+
+
+        var app = new Vue({
+            el: '#app'
+            
+
+        })
+    </script>
+</body>
+</html>

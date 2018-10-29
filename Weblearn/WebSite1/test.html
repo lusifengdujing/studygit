@@ -5,54 +5,52 @@
     <title></title>
     <script type="text/javascript" src="/scripts/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.bootcss.com/vue/2.5.9/vue.min.js"></script>
+    <script src=""></script>
 </head>
 <body>
     
 
     <script>
-        //在字典中不存在返回null
-        var getSpreaderType = function (key) {
-            //var key = this.getValue(key);
-
-            //$.get('types.json', function (spreadertype) {
-            //    if (key in spreadertype) {
-            //        console.log('存在的型号为' + spreadertype[key]);
-            //        return spreadertype[key];
-            //    } else {
-            //        console.log('不存在type');
-            //        return null;
-            //    }// data即为json文件内容里的json数据
-            //});
-            //var m=$.get('types.json', function (type) {
-            //    console.log(type);// data即为json文件内容里的json数据
-            //    return type;
-            //}, 'json');
-            //console.log('key:'+key);
-            //console.log('数据是'+m);
-            //console.log();
-            //return m[key];
-
-            var sprdtypes = {
-                "1": "STZ",
-                "2": "STB",
-                "3": "SRZ",
-                "4": "SPR",
-                "5": "SPZ",
-                "6": "SPB"
+        $(document).ready(function () {
+            $.ajax({
+                url: '/types.json',
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        });
+        
+        var getSpreaderType = function () {
+            var type = function () {
+                $.ajax({
+                    url: '/types.json',
+                    async: false,
+                    success: function (data) {
+                        console.log(data);
+                        return data;
+                    }
+                });
             };
-            if (key in sprdtypes) {
-                console.log(sprdtypes[key]);
-                return sprdtypes[key];
-            }
-            else { return null; }            
+            console.log(type);
+            
+            };
+                
 
-        }
-
-        //getSpreaderType(1);
-        var b = 1;
-        console.log(typeof b);
-        getSpreaderType(b);
-            //console.log(getSpreaderType(1));
+            
+                   
+        //getSpreaderType(b);           
+        getSpreaderType(1);
+        console.log('获取的' + getSpreaderType(1));
+        //var sprdtypes = {
+            //    "1": "STZ",
+            //    "2": "STB",
+            //    "3": "SRZ",
+            //    "4": "SPR",
+            //    "5": "SPZ",
+            //    "6": "SPB"
+            //};
+            //console.log('sprdtypes' + sprdtypes);
     </script>
         
 </body>
